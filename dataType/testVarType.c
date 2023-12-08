@@ -126,6 +126,7 @@ int main()
     printf("notVal:%d\n", notVal);
 #endif
 
+#if 0
     /* 且 或 非 */
     int condition1 = 1;
     int condition2 = 5;
@@ -139,8 +140,21 @@ int main()
     printf("not hello world\n");
     }
     /*且：两边*/
+#endif
 
 
+    /* 运算符：双目运算符 & 三目运算符 */
+    /* 双目运算符 */
+    // int a = 7 + 8;
+
+
+    /* */
+    int num1 = 10;
+    int num2 = 30;
+
+    /* */
+    int num3 = num1 > num2 ? 100 : 666;
+    printf("num3:%d\n",num3); 
 
 
 
