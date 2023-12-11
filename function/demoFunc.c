@@ -23,7 +23,7 @@ void purchaseAppointThing()
 
 #endif
 
-#if 1
+#if 0
 //case2：有参数，没有返回值
 /* 函数参数一定有数据类型 */
 void myAddNum1(int num1, int num2)
@@ -34,7 +34,7 @@ void myAddNum1(int num1, int num2)
 }
 #endif
 
-#if 1
+#if 0
 // case3: 有参数 有返回值
 int myAddNum2(int num1, int num2)
 {
@@ -46,7 +46,21 @@ int myAddNum2(int num1, int num2)
 
 #endif
 
+typedef enum STATUS_CODE
+{
+    ON_SUCCESS,
+    ON_ERROR,
+    ON_NULLPTR,
+    ON_MALLOCFAIL,
+} STATUS_CODE;
+/* 取别名 */
+#if 0
+typedef enum STATUS_CODE STATUS_CODE; //这种可以
+#endif
+
 int main()
+{
+#if 0
 {
     /* 函数的调用 */
     purchaseAppointThing();
@@ -69,6 +83,33 @@ int main()
     {
         print("i not get\n");
     }
-
     return 0 ;
+    
+    STATUS_CODE status;
+    int len = sizeof(status);
+    ptintr("%d",len);
+
+}
+#endif
+    
+    STATUS_CODE status;
+    int len = sizeof(status);
+    ptintr("%d",len);
+
+    int num1 = 50;
+    int num2 = 60;
+
+    int sum = calculateADD(num1, num2);
+    printf("sum:%d\n",sum);
+
+    int Sub = calculateSub(num1, num2);
+    printf("Sub:%d\n",Sub);
+
+    int Mul = calculateMul(num1, num2);
+    printf("Mul:%d\n",Mul);
+
+    int Div = calculateDiv(num1, num2);
+    printf("Div:%d\n",Div);
+
+    return 0;
 }
