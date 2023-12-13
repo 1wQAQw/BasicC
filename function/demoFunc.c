@@ -3,65 +3,55 @@
 #include <string.h>
 #include "calculateFunc.h"
 
-/* 函数参数：可以没有 也可以有*/
-/* 函数返回值：可以没有 也可以有
-    没有的情况需要写void
-    如果有，返回你想返回的数据类型 { int | long | char | double | short | float}
+/* 函数参数:可以没有 也可以有 */
+/* 函数返回值: 可以没有 也可以有。
+    没有的情况需要写void 
+    如果有, 返回你想返回的数据类型{ int | long | short | char | float | double }
 */
 
-/* 什么叫API： Appliction Programing Intert */
+/* 什么叫API: Application Programming Interface. */
+
 
 /* 函数的定义 */
-
-#if 1
-
-//case1：没有参数，没有返回值
+#if 0
+// case1: 没有参数，没有返回值
 void purchaseAppointThing()
 {
     printf("purchase a phone\n");
 }
-
 #endif
 
 #if 0
-//case2：有参数，没有返回值
+// case2: 有参数，没有返回值
 /* 函数参数一定有数据类型 */
 void myAddNum1(int num1, int num2)
 {
     int sum = num1 + num2;
     printf("sum:%d\n", sum);
-    return sum;
 }
 #endif
 
 #if 0
-// case3: 有参数 有返回值
+// case3:有参数,有返回值
+/* 函数参数一定有数据类型 */
 int myAddNum2(int num1, int num2)
 {
     int sum = num1 + num2;
     printf("sum:%d\n", sum);
     return sum;
 }
-
-
 #endif
 
-typedef enum STATUS_CODE
-{
-    ON_SUCCESS,
-    ON_ERROR,
-    ON_NULLPTR,
-    ON_MALLOCFAIL,
-} STATUS_CODE;
+
+
+#if 0 
 /* 取别名 */
-#if 0
-typedef enum STATUS_CODE STATUS_CODE; //这种可以
+typedef enum STATUS_CODE STATUS_CODE;   // 这种可以的
 #endif
 
 int main()
 {
 #if 0
-{
     /* 函数的调用 */
     purchaseAppointThing();
 
@@ -69,47 +59,39 @@ int main()
     int num2 = 6;
 
     /* 函数的使用 */
-    myAddNum(num1, num2);
-    
+    myAddNum1(num1, num2);
 
     int totalSum = myAddNum2(num1, num2);
-
     int transFormerPrice = 10;
-    if(totalSum > transFormerPrice)
+    if (totalSum > transFormerPrice)
     {
-        print("get a transFormer\n");
+        printf("get a transFormer\n");
     }
     else
     {
-        print("i not get\n");
+        printf("l not geted.\n");
     }
-    return 0 ;
-    
-    STATUS_CODE status;
-    int len = sizeof(status);
-    ptintr("%d",len);
-
-}
 #endif
-    
+
+#if 0
     STATUS_CODE status;
     int len = sizeof(status);
-    ptintr("%d",len);
+    printf("len:%d\n", len);
+#endif
 
     int num1 = 50;
     int num2 = 60;
+    int sum = calculateAdd(num1, num2);
+    printf("sum:%d\n", sum);
 
-    int sum = calculateADD(num1, num2);
-    printf("sum:%d\n",sum);
+    int num3 = calculateSub(num1, num2);
+    printf("sum:%d\n", num3);
 
-    int Sub = calculateSub(num1, num2);
-    printf("Sub:%d\n",Sub);
+    int amass = calculateMul(num1, num2);
+    printf("sum:%d\n", amass);
 
-    int Mul = calculateMul(num1, num2);
-    printf("Mul:%d\n",Mul);
-
-    int Div = calculateDiv(num1, num2);
-    printf("Div:%d\n",Div);
+    int num4 = calculateDiv(num1, num2);
+    printf("num4:%d\n", num4);
 
     return 0;
 }
